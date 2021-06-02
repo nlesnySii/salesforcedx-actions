@@ -1,9 +1,9 @@
 FROM salesforce/salesforcedx
 
 RUN apt-get update
-RUN apt-get install curl
+RUN echo y | apt-get install curl
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
-RUN apt-get install nodejs
+RUN echo y | apt-get install nodejs
 
 RUN echo y | sfdx plugins:install sfdx-git-delta
 
