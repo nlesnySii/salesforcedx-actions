@@ -1,12 +1,11 @@
-FROM node:14.14-alpine
+FROM salesforce/salesforcedx
 
-# install Salesforce CLI from npm
-RUN npm install sfdx-cli --global
-RUN sfdx --version
+RUN apt-get update
+RUN apt-get install curl
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN apt-get install nodejs
 
-# install SFDX-Git-Delta plugin - https://github.com/scolladon/sfdx-git-delta
 RUN echo y | sfdx plugins:install sfdx-git-delta
-RUN sfdx plugins
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
