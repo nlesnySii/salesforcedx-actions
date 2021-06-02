@@ -2,7 +2,6 @@ FROM salesforce/salesforcedx
 
 RUN mkdir $HOME/.config/sfdx/ -p
 RUN echo '["sfdx-git-delta"]' > $HOME/.config/sfdx/unsignedPluginWhiteList.json
-RUN sfdx plugins:install sfdx-git-delta
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
