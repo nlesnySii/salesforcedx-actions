@@ -1,7 +1,7 @@
 FROM salesforce/salesforcedx
 
-RUN node -v
-RUN echo y | sfdx plugins:install sfdx-git-delta
+RUN npm install sfdx-git-delta@latest --global
+RUN sgd --version
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
