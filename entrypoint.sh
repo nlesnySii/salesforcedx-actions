@@ -3,7 +3,7 @@
 set -e
 
 # Capture output
-result=$( "$*" )
+result=$( $1 )
 
 # Write output to output variable
 echo ::set-output name=result::$result
