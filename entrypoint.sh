@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -e
 
 # Capture output
 result=$( sh -c "$*" )
