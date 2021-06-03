@@ -3,7 +3,7 @@
 set -e
 
 # Capture output
-result=$( sh -c '$*' )
+result=$( sh -c "$*" )
 
 echo $result
 # Write output to output variable
